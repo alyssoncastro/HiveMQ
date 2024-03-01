@@ -1,0 +1,54 @@
+# Integração com HiveMQ
+
+##### ALYSSON C.C. CORDEIRO
+
+Este projeto demonstra a integração de um simulador de sensores MQTT com o serviço HiveMQ. O simulador consiste em dois scripts Python: um para publicação (publisher) e outro para recebimento (subscriber) de mensagens MQTT.
+
+## Configuração
+
+Antes de executar os scripts, é necessário configurar as variáveis de ambiente para autenticação no HiveMQ. Crie um arquivo `.env` no diretório raiz do projeto com as seguintes variáveis:
+
+```env
+BROKER_HIVE=seu_broker_url.hivemq.cloud
+PORT_HIVE=8883
+HIVE_USER=seu_username
+HIVE_PASS=sua_senha
+```
+
+Certifique-se de substituir "seu_broker_url", "seu_username" e "sua_senha" pelos detalhes fornecidos pela sua conta no HiveMQ.w
+
+## Execução do Publisher
+
+O script ```pub.py``` simula um sensor de gases e publica dados no tópico ***"sensor/gases"*** no HiveMQ.
+
+```python
+python pub.py
+```
+
+## Execução do Subscriber
+
+O script ```sub.py``` é um teste de unidade que verifica se o subscriber recebe corretamente as mensagens publicadas no tópico "sensor/gases" no HiveMQ.
+
+```python 
+python sub.py
+```
+
+## TESTES:
+
+Para verificar e testar a transmissão de dados, você pode usar o HiveMQ Cloud Dashboard ou o console do HiveMQ Broker, dependendo da sua configuração.
+
+1. HiveMQ Cloud Dashboard:
+
+- Acesse HiveMQ Cloud Dashboard.
+- Utilize o "MQTT Web Client" para se inscrever nos tópicos e verificar as mensagens.
+
+2. HiveMQ Local (Console):
+
+- Utilize o hivemq-cli ou hivemq-cli.bat para assinar tópicos e verificar as mensagens recebidas no HiveMQ local.
+- Certifique-se de que o simulador está conectado ao HiveMQ e que as mensagens estão sendo transmitidas corretamente.
+
+## vídeo:
+
+o vídeo não está em uma saturação muito boa. TINHA QUE GRAVAR PELO CELULAR, pois o computador estava cortando meu video.
+
+https://drive.google.com/file/d/1RghT7GBsf07FpBOOt-K0Zrhd3KGqEfj5/view?usp=sharing
