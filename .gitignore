@@ -1,6 +1,10 @@
 .env/
-env/
-mqtt-cli-shell.cmd/
-mqtt-cli-shell/
-LINCESE/
-README.txt/
+
+.env
+
+env
+
+mqtt-cli-shell.cmd
+mqtt-cli-shell
+LINCESE
+README.txt
